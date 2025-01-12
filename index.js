@@ -19,10 +19,12 @@ function search() {
     request.send();
     
     request.onload = function() {
+
         // Remove loading state
         document.querySelector('.search-button').classList.remove('loading');
         
         const response = request.response;
+        console.log(response);
         
         if (response.Response === "False") {
             showToast('Movie not found!');
